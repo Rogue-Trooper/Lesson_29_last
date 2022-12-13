@@ -14,6 +14,17 @@ class Product:
         else:
             if not hasattr(self, "_price"):
                 self._price = 0
+            else:
+                raise ValueError("Product price was wrong")
+
+    def set_price(self, price):
+        if price >= 0:
+            self._price = price
+        else:
+            if not hasattr(self, "_price"):
+                self._price = 0
+            else:
+                raise ValueError("Product price was wrong")
 
     @price.deleter
     def price(self):
